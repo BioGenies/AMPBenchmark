@@ -27,8 +27,8 @@ Due to its size, the input data is hosted on [Dropbox](https://www.dropbox.com/s
 
 There are two main types of the input sequences:
 
- - positive sequence (e.g., <span style="color:blue">DBAASP_10718</span>_<span style="color:red">AMP=1</span>_<span style="color:green">rep1</span>): <span style="color:blue">IDinDBAASP</span>_<span style="color:red">class</span>_<span style="color:green">replicateID</span>.
- - negative sequences (e.g., <span style="color:blue">Seq1896_sampling_method=Gabere&Noble</span>_<span style="color:red">AMP=0</span>_<span style="color:green">rep1</span>_AMP=0_rep4): <span style="color:blue">IDandSamplingMethod</span>_<span style="color:red">class</span>_<span style="color:green">replicateID</span>.
+ - positive sequence (e.g., **DBAASP_10718**_*AMP=1*_rep1): **IDinDBAASP**_*class*_replicateID.
+ - negative sequences (e.g., **Seq1896_sampling_method=Gabere&Noble**_*AMP=0*_rep4): **IDandSamplingMethod**_*class*_replicateID.
 
 md5 sum of the **AMPBenchmark_public.fasta**: 58f1424c057aaeb64bc632cad6038cad.
 
