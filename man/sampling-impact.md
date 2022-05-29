@@ -1,1 +1,0 @@
-This chart allows monitoring of the impact of the sampling method on a learning architecture method. The diagonal line represents all models with a similar performance regardless of the discrepancy between the sampling method for training and benchmarking. The closer the architecture is to that line, the more robust it is.
