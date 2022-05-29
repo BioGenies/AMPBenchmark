@@ -3,3 +3,11 @@
 .RData
 .Ruserdata
 .AMPBenchmark_public.fasta
+AMPBenchmark.Rproj
+AMPBenchmark_public.fasta
+README.html
+detailed_stats.RDS
+generate_data.R
+sample_data.csv
+test.png
+utils.R
