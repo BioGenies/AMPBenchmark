@@ -4,11 +4,14 @@ AMPBenchmark is a part of our initative for the improvement of benchmarking stan
 
 ## How to use the public data?
 
-1. Download the sequence data: 
-    - [Dropbox link](https://www.dropbox.com/s/uz731rguekt4ysx/AMPBenchmark_public.fasta?dl=0).
+1. Download the benchmark sequence data: 
+    - [Dropbox link](https://www.dropbox.com/s/plthn4f0v5y8psi/AMPBenchmark_public.fasta?dl=0).
     - [GitHub link](https://raw.githubusercontent.com/BioGenies/AMPBenchmark/main/data/AMPBenchmark_public.fasta?token=GHSAT0AAAAAABS4SIUMO3EI6JSQJJ2OC62WYUT5E6A).
-2. Benchmark your model against our data.
-3. Submit the results in the format described below to the (AMPBenchmark web server)[].
+2. Download the training sequence data for all methods and replications:
+    - [Dropbox link](https://www.dropbox.com/sh/e489gp126ownv3n/AAC_KAI5yDSX2aJhJ0G9ZMnha?dl=0).
+3. Train your model using each of the training data set (class of a sequence is denoted by AMP=1 for AMPs and AMP=0 for negative samples, see [Sequence data](https://github.com/BioGenies/AMPBenchmark#sequence-data) section for details.)
+4. Benchmark trained models against our data. Make sure to use a subset of sequences for appropriate replication (replication number is denoted by, e.g. rep=1, see [Sequence data](https://github.com/BioGenies/AMPBenchmark#sequence-data) section for details.)
+5. Submit the results in the format described below to the [AMPBenchmark web server](http://biogenies.info/AMPBenchmark/).
 
 ### Data submission format
 
@@ -20,14 +23,16 @@ AMPBenchmark is a part of our initative for the improvement of benchmarking stan
 
 
  - **ID**: must contain the sequence ID, as provided in the FASTA headers of the input sequences. 
- - **training_sampling**: has to contain the type of negative sampling method used to train the model. Possible values are: *AMAP*, *AmpGram*, *ampir-mature*, *AMPlify*, *AMPScannerV2*, *CS-AMPPred*, *dbAMP*, *Gabere&Noble*, *iAMP-2L*, *Wang-et-al*, *Witten&Witten*. Remember that a proper benchmark requires you to train your model using every provided sampling method and evaluate it using all sampling methods.
+ - **training_sampling**: has to contain the type of negative sampling method used to train the model. Possible values are: *AMAP*, *AmpGram*, *ampir-mature*, *AMPlify*, *AMPScannerV2*, *CS-AMPPred*, *dbAMP*, *Gabere&Noble*, *iAMP-2L*, *Wang-et-al*, *Witten&Witten*. Remember that a proper benchmark requires you to train your model using every provided sampling method and evaluate it using all sampling methods using appropriate replication.
  - **AMP_probability**: has to be in the range between 0 and 1.
  
-Exemple data for a random classifer can be downloaded from [Dropbox](https://www.dropbox.com/s/sg93msr3ufvpn4o/sample_data.csv?dl=0).
+Example data for a random classifier can be downloaded from [Dropbox](https://www.dropbox.com/s/sg93msr3ufvpn4o/sample_data.csv?dl=0).
 
 ### Sequence data
 
-The input data is hosted on [Dropbox](https://www.dropbox.com/s/uz731rguekt4ysx/AMPBenchmark_public.fasta?dl=0) and [GitHub](https://raw.githubusercontent.com/BioGenies/AMPBenchmark/main/data/AMPBenchmark_public.fasta?token=GHSAT0AAAAAABS4SIUMO3EI6JSQJJ2OC62WYUT5E6A).
+The input data is hosted on [Dropbox](https://www.dropbox.com/s/uz731rguekt4ysx/AMPBenchmark_public.fasta?dl=0) and [GitHub](https://raw.githubusercontent.com/BioGenies/AMPBenchmark/main/data/AMPBenchmark_public.fasta?token=GHSAT0AAAAAABS4SIUMO3EI6JSQJJ2OC62WYUT5E6A). Note that this single file contains data for all replications which should be used separately with appropriate replications of training sets. 
+
+The training data sets are hosted on [Dropbox](https://www.dropbox.com/s/plthn4f0v5y8psi/AMPBenchmark_public.fasta?dl=0) and follow the same naming convention.  
 
 There are two types of the input sequences:
 
