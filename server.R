@@ -94,7 +94,7 @@ shinyServer(function(input, output) {
   output[["heatmap_plot"]] <- renderPlot({
     plot_dat <- heatmap_df() %>% 
       mutate(ident = training_sampling == benchmark_sampling,
-             architecture = paste0("A: ", architecture),
+             architecture = paste0("A:", architecture),
              architecture = factor(architecture, levels = unique(architecture)))
     
     ggplot(plot_dat, aes(x = training_sampling, y = benchmark_sampling, 
@@ -133,9 +133,9 @@ shinyServer(function(input, output) {
                              MACREL = "#81b6e1", MLAMP = "#8e8e8e", `SVM-LZ` = "#d0ad2f",
                              `New model` = "black")
     
-    ggplot(reference_nonreference_df(), 
-           aes(x = mean_AUC_reference, y = mean_AUC_nonreference,
-               color = architecture, label = architecture)) +
+    p <- ggplot(reference_nonreference_df(), 
+                aes(x = mean_AUC_reference, y = mean_AUC_nonreference,
+                    color = architecture, label = architecture)) +
       geom_point(size = 3) +
       geom_abline(slope = 1, intercept = 0) +
       geom_label_repel(show.legend = FALSE) +
@@ -145,7 +145,14 @@ shinyServer(function(input, output) {
                          limits = c(0.5, 1)) +
       scale_color_manual("Architecture", values = architecture_colors) + 
       coord_equal() +
-      theme_bw()
+      theme_bw() 
+    if(input[["sd"]] == TRUE) {
+      p +
+        geom_errorbar(aes(ymin = mean_AUC_nonreference-sd_AUC_nonreference, ymax = mean_AUC_nonreference+sd_AUC_nonreference)) +
+        geom_errorbar(aes(xmin = mean_AUC_reference-sd_AUC_reference, xmax = mean_AUC_reference+sd_AUC_reference))
+    } else{
+      p
+    }
   })
   
   

@@ -21,7 +21,9 @@ shinyUI(
               tabPanel("Impact of the sampling method",
                        includeMarkdown("./man/sampling-impact.md"),
                        tabsetPanel(
-                         tabPanel("Chart", plotOutput("reference_vs_nonreference_plot")),
+                         tabPanel("Chart", 
+                                  checkboxInput("sd", "Show standard deviations"),
+                                  plotOutput("reference_vs_nonreference_plot")),
                          tabPanel("Source data", DT::dataTableOutput("reference_vs_nonreference_dt"))
                        )
               )
