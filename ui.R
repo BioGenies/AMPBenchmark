@@ -3,11 +3,16 @@ library(shinycssloaders)
 library(bslib)
 library(DT)
 
+source("https://raw.githubusercontent.com/BioGenies/NegativeDatasets/main/docs/rmd_scripts.R")
+
 shinyUI(
   fluidPage(title = "AMPBenchmark",
             theme = bs_theme(version = 4, bootswatch = "lux"),
             tags$head(tags$link(rel = "stylesheet", type = "text/css", href = "progress.css")),
             includeMarkdown("./man/readme.md"),
+            markdown(negative_sampling_citation()),
+            markdown(negative_sampling_links()),
+            markdown(negative_sampling_contact()),
             fileInput("user_preds", "Provide input data"),
             tabsetPanel(
               tabPanel("New architecture overview",
