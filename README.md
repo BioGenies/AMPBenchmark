@@ -84,9 +84,9 @@ md5 sum of the **AMPBenchmark_public.fasta**:
 Katarzyna Sidorczuk, Przemysław Gagat, Filip Pietluch, Jakub Kała,
 Dominik Rafacz, Laura Bąkała, Jadwiga Słowik, Rafał Kolenda, Stefan
 Rödiger, Legana C H W Fingerhut, Ira R Cooke, Paweł Mackiewicz, Michał
-Burdukiewicz [*Benchmarks in antimicrobial peptide prediction are biased
-due to the selection of negative
-data.*](https://doi.org/10.1101/2022.05.30.493946)
+Burdukiewicz, Benchmarks in antimicrobial peptide prediction are biased
+due to the selection of negative data, Briefings in Bioinformatics,
+2022;, bbac343, <https://doi.org/10.1093/bib/bbac343>.
 
 ## Important links
 
