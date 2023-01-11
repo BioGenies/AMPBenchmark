@@ -31,30 +31,31 @@ shinyServer(function(input, output) {
     
     rep_method_df <- dplyr::mutate(dat, 
                                    rep = sapply(strsplit(ID, "_"), last),
-                                   training_sampling = sapply(strsplit(ID, "_"), 
+                                   benchmark_sampling = sapply(strsplit(ID, "_"), 
                                                               function(i) i[length(i) - 2])) %>% 
       dplyr::mutate(target = grepl(pattern = "AMP=1", x = ID, fixed = TRUE),
-                    positive = !grepl(pattern = "method", x = training_sampling, fixed = TRUE),
-                    training_sampling = ifelse(positive, "positive", training_sampling),
-                    training_sampling = gsub(pattern = "method=", replacement = "", 
-                                             x = training_sampling)) %>% 
+                    positive = !grepl(pattern = "method", x = benchmark_sampling, fixed = TRUE),
+                    benchmark_sampling = ifelse(positive, "positive", benchmark_sampling),
+                    benchmark_sampling = gsub(pattern = "method=", replacement = "", 
+                                             x = benchmark_sampling)) %>% 
       dplyr::select(-positive)
     
     percentage <- 0
-    total_len <- length(setdiff(unique(rep_method_df[["training_sampling"]]), "positive")) * 
-      length(unique(rep_method_df[["rep"]])) * length(unique(rep_method_df[["benchmark_sampling"]]))
+    total_len <- length(setdiff(unique(rep_method_df[["benchmark_sampling"]]), "positive")) * 
+      length(unique(rep_method_df[["rep"]])) * length(unique(rep_method_df[["training_sampling"]]))
     
     full_res <- withProgress(lapply(unique(rep_method_df[["rep"]]), function(ith_rep) {
-      lapply(setdiff(unique(rep_method_df[["training_sampling"]]), "positive"),
+      lapply(unique(rep_method_df[["training_sampling"]]),
              function(ith_training_sampling) {
-               lapply(unique(rep_method_df[["benchmark_sampling"]]), function(ith_benchmark_sampling) {
+               lapply(setdiff(unique(rep_method_df[["benchmark_sampling"]]), "positive"), function(ith_benchmark_sampling) {
                  
                  percentage <<- percentage + 1/total_len*100
                  incProgress(1/total_len, message = "", 
                              detail = paste0("Progress: ", round(percentage, 4), "%"))
                  
                  part_rep_method_df <- dplyr::filter(rep_method_df, 
-                                                     training_sampling %in% c(ith_training_sampling, "positive"),
+                                                     training_sampling == ith_training_sampling,
+                                                     benchmark_sampling %in% c(ith_benchmark_sampling, "positive"),
                                                      rep == ith_rep)
                  metrics <- hmeasure::HMeasure(part_rep_method_df[["target"]], 
                                                part_rep_method_df[["AMP_probability"]])[["metrics"]]
