@@ -62,3 +62,7 @@ cat(negative_sampling_links())
 ```{r echo = FALSE, results = 'asis'}
 cat(negative_sampling_contact())
 ```
+
+## Changelog
+
+ - 2023/01/11: fixed data processing.

@@ -8,14 +8,14 @@ prediction.
 ## How to use the public data?
 
 1.  Download the benchmark sequence data:
-    -   [Dropbox
-        link](https://www.dropbox.com/s/plthn4f0v5y8psi/AMPBenchmark_public.fasta?dl=0).
-    -   [GitHub
-        link](https://raw.githubusercontent.com/BioGenies/AMPBenchmark/main/data/AMPBenchmark_public.fasta?token=GHSAT0AAAAAABS4SIUMO3EI6JSQJJ2OC62WYUT5E6A).
+    - [Dropbox
+      link](https://www.dropbox.com/s/plthn4f0v5y8psi/AMPBenchmark_public.fasta?dl=0).
+    - [GitHub
+      link](https://raw.githubusercontent.com/BioGenies/AMPBenchmark/main/data/AMPBenchmark_public.fasta?token=GHSAT0AAAAAABS4SIUMO3EI6JSQJJ2OC62WYUT5E6A).
 2.  Download the training sequence data for all methods and
     replications:
-    -   [Dropbox
-        link](https://www.dropbox.com/sh/e489gp126ownv3n/AAC_KAI5yDSX2aJhJ0G9ZMnha?dl=0).
+    - [Dropbox
+      link](https://www.dropbox.com/sh/e489gp126ownv3n/AAC_KAI5yDSX2aJhJ0G9ZMnha?dl=0).
 3.  Train your model using each of the training data set (class of a
     sequence is denoted by AMP=1 for AMPs and AMP=0 for negative
     samples, see [Sequence
@@ -37,16 +37,16 @@ prediction.
 | DBAASP_3217_AMP=1_rep1  | dbAMP             | 0.61            |
 | …                       | …                 | …               |
 
--   **ID**: must contain the sequence ID, as provided in the FASTA
-    headers of the input sequences.
--   **training_sampling**: has to contain the type of negative sampling
-    method used to train the model. Possible values are: *AMAP*,
-    *AmpGram*, *ampir-mature*, *AMPlify*, *AMPScannerV2*, *CS-AMPPred*,
-    *dbAMP*, *Gabere&Noble*, *iAMP-2L*, *Wang-et-al*, *Witten&Witten*.
-    Remember that a proper benchmark requires you to train your model
-    using every provided sampling method and evaluate it using all
-    sampling methods using appropriate replication.
--   **AMP_probability**: has to be in the range between 0 and 1.
+- **ID**: must contain the sequence ID, as provided in the FASTA headers
+  of the input sequences.
+- **training_sampling**: has to contain the type of negative sampling
+  method used to train the model. Possible values are: *AMAP*,
+  *AmpGram*, *ampir-mature*, *AMPlify*, *AMPScannerV2*, *CS-AMPPred*,
+  *dbAMP*, *Gabere&Noble*, *iAMP-2L*, *Wang-et-al*, *Witten&Witten*.
+  Remember that a proper benchmark requires you to train your model
+  using every provided sampling method and evaluate it using all
+  sampling methods using appropriate replication.
+- **AMP_probability**: has to be in the range between 0 and 1.
 
 Example data for a random classifier can be downloaded from
 [Dropbox](https://www.dropbox.com/s/sg93msr3ufvpn4o/sample_data.csv?dl=0).
@@ -67,11 +67,11 @@ and follow the same naming convention.
 
 There are two types of the input sequences:
 
--   positive sequence (e.g., **DBAASP_10718**\_*AMP=1*\_rep1):
-    **IDinDBAASP**\_*class*\_replicateID.
--   negative sequences (e.g.,
-    **Seq1896_sampling_method=Gabere&Noble**\_*AMP=0*\_rep4):
-    **IDandSamplingMethod**\_*class*\_replicateID.
+- positive sequence (e.g., **DBAASP_10718**\_*AMP=1*\_rep1):
+  **IDinDBAASP**\_*class*\_replicateID.
+- negative sequences (e.g.,
+  **Seq1896_sampling_method=Gabere&Noble**\_*AMP=0*\_rep4):
+  **IDandSamplingMethod**\_*class*\_replicateID.
 
 AMP sequences are derived from the [DBAASP
 database](https://dbaasp.org/).
@@ -90,14 +90,18 @@ due to the selection of negative data, Briefings in Bioinformatics,
 
 ## Important links
 
--   <https://github.com/BioGenies/NegativeDatasets>: the repository
-    containing the code necessary to reproduce results of our analysis.
--   <https://github.com/BioGenies/NegativeDatasetsArchitectures>: the
-    repository containing all architectures considered in our analysis.
--   <https://github.com/BioGenies/AMPBenchmark>: the source code of
-    AMPBenchmark.
+- <https://github.com/BioGenies/NegativeDatasets>: the repository
+  containing the code necessary to reproduce results of our analysis.
+- <https://github.com/BioGenies/NegativeDatasetsArchitectures>: the
+  repository containing all architectures considered in our analysis.
+- <https://github.com/BioGenies/AMPBenchmark>: the source code of
+  AMPBenchmark.
 
 ## Contact
 
 If you have any questions, suggestions or comments, contact [Michal
 Burdukiewicz](mailto:michalburdukiewicz@gmail.com).
+
+## Changelog
+
+- 2023/01/11: fixed data processing.
