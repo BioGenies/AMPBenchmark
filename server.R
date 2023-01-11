@@ -13,9 +13,9 @@ my_DT <- function(x, ...)
   datatable(x, ..., escape = FALSE, extensions = 'Buttons', 
             filter = "top", rownames = FALSE,
             style = "bootstrap", 
-            options = list(dom = "Brt",
+            options = list(dom = "Brtp",
                            buttons = c("copy", "csv", "excel", "print"),
-                           pageLength = 50)
+                           pageLength = 55)
   )
 
 #source("utils.R")
