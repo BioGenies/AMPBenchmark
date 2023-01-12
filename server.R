@@ -180,8 +180,8 @@ shinyServer(function(input, output) {
   output[["reference_vs_nonreference_dt"]] <- DT::renderDataTable({
     reference_nonreference_df() %>% 
       setNames(c("Architecture", 
-                 "Mean AUC (same method)", "Mean AUC (different methods)",
-                 "SD AUC (same method)", "SD AUC (different methods)")) %>% 
+                 "Mean AUC (different methods)", "Mean AUC (same method)",
+                 "SD AUC (different methods)", "SD AUC (same method)")) %>% 
       my_DT() %>% 
       formatRound(columns = 2L:5, digits = 4)
   }) 
