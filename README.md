@@ -9,13 +9,13 @@ prediction.
 
 1.  Download the benchmark sequence data:
     - [Dropbox
-      link](https://www.dropbox.com/s/plthn4f0v5y8psi/AMPBenchmark_public.fasta?dl=0).
+      link](https://www.dropbox.com/scl/fi/6hxboi6xy1jm1q1ie6vyg/AMPBenchmark_public.fasta?rlkey=3egb368kyh347fdfamcfd75m0&st=ld02vyiv&dl=0).
     - [GitHub
       link](https://raw.githubusercontent.com/BioGenies/AMPBenchmark/main/data/AMPBenchmark_public.fasta?token=GHSAT0AAAAAABS4SIUMO3EI6JSQJJ2OC62WYUT5E6A).
 2.  Download the training sequence data for all methods and
     replications:
     - [Dropbox
-      link](https://www.dropbox.com/sh/e489gp126ownv3n/AAC_KAI5yDSX2aJhJ0G9ZMnha?dl=0).
+      link](https://www.dropbox.com/scl/fo/f8kdfgoa8htsvpc79v0u2/ANOcYXz3fSRyE5kEumDDsVs?rlkey=a0su8jyn5nsjnzs2gkqya5n24&st=xd69dycx&dl=0).
 3.  Train your model using each of the training data set (class of a
     sequence is denoted by AMP=1 for AMPs and AMP=0 for negative
     samples, see [Sequence
@@ -49,12 +49,12 @@ prediction.
 - **AMP_probability**: has to be in the range between 0 and 1.
 
 Example data for a random classifier can be downloaded from
-[Dropbox](https://www.dropbox.com/s/sg93msr3ufvpn4o/sample_data.csv?dl=0).
+[Dropbox](https://www.dropbox.com/scl/fi/xqeqdsygkxjg5qt2b7ezg/sample_data.csv?rlkey=ql7gtoumuecwbg5tr0frl81bb&st=w7pdevvn&dl=0).
 
 ### Sequence data
 
 The input data is hosted on
-[Dropbox](https://www.dropbox.com/s/uz731rguekt4ysx/AMPBenchmark_public.fasta?dl=0)
+[Dropbox](https://www.dropbox.com/scl/fi/6hxboi6xy1jm1q1ie6vyg/AMPBenchmark_public.fasta?rlkey=3egb368kyh347fdfamcfd75m0&st=wj8wc93f&dl=0)
 and
 [GitHub](https://raw.githubusercontent.com/BioGenies/AMPBenchmark/main/data/AMPBenchmark_public.fasta?token=GHSAT0AAAAAABS4SIUMO3EI6JSQJJ2OC62WYUT5E6A).
 Note that this single file contains data for all replications which
@@ -62,7 +62,7 @@ should be used separately with appropriate replications of training
 sets.
 
 The training data sets are hosted on
-[Dropbox](https://www.dropbox.com/s/plthn4f0v5y8psi/AMPBenchmark_public.fasta?dl=0)
+[Dropbox](https://www.dropbox.com/scl/fo/f8kdfgoa8htsvpc79v0u2/ANOcYXz3fSRyE5kEumDDsVs?rlkey=a0su8jyn5nsjnzs2gkqya5n24&st=vpcy0lyc&dl=0)
 and follow the same naming convention.
 
 There are two types of the input sequences:
@@ -104,4 +104,5 @@ Burdukiewicz](mailto:michalburdukiewicz@gmail.com).
 
 ## Changelog
 
+- 2024/07/29: updated dropbox links.
 - 2023/01/11: fixed data processing.
